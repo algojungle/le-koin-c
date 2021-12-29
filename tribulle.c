@@ -1,3 +1,9 @@
+/*
+    Algorihtme du tri bulle
+
+    par Joseph Konka (Algo Geeks)
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -10,7 +16,6 @@ void AfficherTableau(int *tab, int n)
     printf("[");
     while(i<n)
     {
-      
         printf("%d ", *(tab+i));
         i++;
     }
@@ -19,11 +24,15 @@ void AfficherTableau(int *tab, int n)
 
 int main()
 {
+    // Prototypes
+    void AfficherTableau(int *, int);
+    
+    // Variables
     int tableau[N]={5,1,6,7,9,2,3,0,4,8};
     int i,tmp,ok;
 
-    // Tableau before
-    printf("Before:\t");
+    // Le tableau initial avant le tri
+    printf("Avant:\t");
     AfficherTableau(tableau, N);
     printf("\n");
     do
@@ -36,13 +45,13 @@ int main()
                 tmp=tableau[i];
                 tableau[i]=tableau[i+1];
                 tableau[i+1]=tmp;
-                ok=1; // Something changes
+                ok=1; // Des éléments ont été échangés
             }
         }
     }while(ok);
 
-    // Tableau after
-    printf("After:\t");
+    // Le tableau après le tri
+    printf("Après:\t");
     AfficherTableau(tableau, N);
     printf("\n");
 
